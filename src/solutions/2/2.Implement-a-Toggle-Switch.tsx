@@ -15,9 +15,11 @@ export const ToggleSwitch = () => {
 
   return (
     <div>
-      <h1>Toggle Switch: {isOn ? 'On' : 'Off'}</h1>
+      <h1>
+        Toggle Switch: <span id="status">{isOn ? 'On' : 'Off'}</span>
+      </h1>
 
-      <button type="button" onClick={toggle}>
+      <button id="toggle" type="button" onClick={toggle}>
         Toggle
       </button>
     </div>
