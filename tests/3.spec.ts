@@ -7,6 +7,8 @@ test.describe(
       // 페이지에 접속하면
       await page.goto('http://localhost:3000/3');
 
+      await page.waitForTimeout(1000);
+
       // 기본 투두가
       const todos = await page.locator('.todo-item').all();
 

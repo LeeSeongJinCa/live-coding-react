@@ -9,9 +9,11 @@
     "lint:format": "prettier  --loglevel warn --write \"./**/*.{js,jsx,ts,tsx,css,md,json}\" ",
     "lint": "yarn lint:format && yarn lint:fix ",
     "type-check": "tsc",
-    "test": "playwright test --ui"
+    "test:ci": "VITE_API_MOCK=true playwright test",
+    "test:e2e": "VITE_API_MOCK=true playwright test --ui"
   },
   "dependencies": {
+    "msw": "^2.7.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router": "^7.1.5"

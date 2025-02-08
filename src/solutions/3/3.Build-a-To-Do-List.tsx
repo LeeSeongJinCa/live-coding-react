@@ -8,11 +8,7 @@
 
 import { useState } from 'react';
 
-interface ITodo {
-  id: string;
-  text: string;
-  completed: boolean;
-}
+import { ITodo } from '../../types';
 
 const uuid = () => crypto.randomUUID();
 
