@@ -23,9 +23,9 @@ export const SearchBar = () => {
   return (
     <div>
       <input
-        id="text-input"
+        id="search-input"
         type="text"
-        placeholder="Todo Name"
+        placeholder="Name"
         value={search}
         onChange={(event) => setSearch(event.currentTarget.value)}
       />
