@@ -14,12 +14,14 @@ export const Counter = () => {
 
   return (
     <div>
-      <h1>Count: {count}</h1>
+      <h1>
+        Count: <span id="count">{count}</span>
+      </h1>
 
-      <button type="button" onClick={() => setCount((prev) => prev + 1)}>
+      <button type="button" id="increase" onClick={() => setCount((prev) => prev + 1)}>
         1 증가
       </button>
-      <button type="button" onClick={() => setCount((prev) => prev - 1)}>
+      <button type="button" id="decrease" onClick={() => setCount((prev) => prev - 1)}>
         1 감소
       </button>
     </div>
