@@ -8,6 +8,7 @@
 
 import { useEffect, useState } from 'react';
 
+import { API_ROUTES } from '../../shared/api-routes';
 import { IPost } from '../../types';
 
 export const PostList = () => {
@@ -16,7 +17,7 @@ export const PostList = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch('https://jsonplaceholder.typicode.com/posts', {
+    fetch(API_ROUTES.posts.GET, {
       method: 'GET',
     })
       .then<IPost[]>((res) => res.json())

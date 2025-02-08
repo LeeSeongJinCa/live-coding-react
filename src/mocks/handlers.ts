@@ -1,7 +1,9 @@
 import { delay, http, HttpResponse } from 'msw';
 
+import { API_ROUTES } from '../shared/api-routes';
+
 export const handlers = [
-  http.get('https://jsonplaceholder.typicode.com/posts', async () => {
+  http.get(API_ROUTES.posts.GET, async () => {
     await delay(500);
     return HttpResponse.json([
       {
