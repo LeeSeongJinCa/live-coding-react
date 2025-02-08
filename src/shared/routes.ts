@@ -1,5 +1,6 @@
-import { Counter } from '../components/1.Create-a-Counter-Component';
-import { ToggleSwitch } from '../components/2.Implement-a-Toggle-Switch';
+import { Counter } from '../solutions/1/1.Create-a-Counter-Component';
+import { ToggleSwitch } from '../solutions/2/2.Implement-a-Toggle-Switch';
+import { TodoList } from '../solutions/3/3.Build-a-To-Do-List';
 
 export const ROUTES = [
   {
@@ -11,5 +12,10 @@ export const ROUTES = [
     path: '/2',
     name: '2. Implement a Toggle Switch',
     component: ToggleSwitch,
+  },
+  {
+    path: '/3',
+    name: '3. Build a To-Do List',
+    component: TodoList,
   },
 ];
