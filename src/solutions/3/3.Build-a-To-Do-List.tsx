@@ -57,13 +57,14 @@ export const TodoList = () => {
     <div>
       <div>
         <input
+          id="text-input"
           type="text"
           placeholder="Todo Name"
           value={text}
           onChange={(event) => setText(event.currentTarget.value)}
           onKeyDown={(event) => event.key === 'Enter' && addTodo(text)}
         />
-        <button type="button" onClick={() => addTodo(text)}>
+        <button id="add-button" type="button" onClick={() => addTodo(text)}>
           +
         </button>
       </div>
@@ -72,6 +73,8 @@ export const TodoList = () => {
         {todos.map((todo) => (
           <li
             key={todo.id}
+            id={todo.id}
+            className="todo-item"
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -79,12 +82,13 @@ export const TodoList = () => {
             }}
           >
             <input
+              id="todo-completed"
               type="checkbox"
               checked={todo.completed}
               onChange={(event) => completeTodo(todo.id, event.currentTarget.checked)}
             />
-            <p>{todo.text}</p>
-            <button type="button" onClick={() => removeTodo(todo.id)}>
+            <p id="todo-text">{todo.text}</p>
+            <button id="todo-remove" type="button" onClick={() => removeTodo(todo.id)}>
               X
             </button>
           </li>
