@@ -3,6 +3,7 @@ import { ToggleSwitch } from '../solutions/2/2.Implement-a-Toggle-Switch';
 import { TodoList } from '../solutions/3/3.Build-a-To-Do-List';
 import { PostList } from '../solutions/4/4.Fetch-Data-from-an-API';
 import { SearchBar } from '../solutions/5/5.Create-a-Search-Bar';
+import { DropdownMenu } from '../solutions/6/5.Create-a-Search-Bar';
 
 export const ROUTES = [
   {
@@ -29,5 +30,10 @@ export const ROUTES = [
     path: '/5',
     name: '5. Create a Search Bar',
     component: SearchBar,
+  },
+  {
+    path: '/6',
+    name: '6. Build a Dropdown Menu',
+    component: DropdownMenu,
   },
 ];
