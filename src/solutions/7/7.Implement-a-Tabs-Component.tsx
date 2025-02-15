@@ -8,8 +8,30 @@
 
 import { ButtonHTMLAttributes, useState } from 'react';
 
+const tabs = [
+  {
+    key: 1,
+    label: 'First',
+    content: <div>This is First Content</div>,
+  },
+  {
+    key: 2,
+    label: 'Second',
+    content: <div>This is Second Content</div>,
+  },
+  {
+    key: 3,
+    label: 'Third',
+    content: <div>This is Third Content</div>,
+  },
+];
+
 export const Tabs = () => {
-  const [tab, setTab] = useState(0);
+  if (tabs.length === 0) {
+    throw new Error('Tabs must have at least one tab');
+  }
+
+  const [activeTab, setActiveTab] = useState<number>(tabs[0].key);
 
   return (
     <div
@@ -18,13 +40,20 @@ export const Tabs = () => {
         border: '1px solid black',
       }}
     >
-      <div style={{ display: 'flex', alignItems: 'center' }}>
-        <TabButton onClick={() => setTab(0)}>1</TabButton>
-        <TabButton onClick={() => setTab(1)}>2</TabButton>
-        <TabButton onClick={() => setTab(2)}>3</TabButton>
+      <div className="tab-buttons" style={{ display: 'flex', alignItems: 'center' }}>
+        {tabs.map((tab) => (
+          <StyledTabButton
+            key={tab.key}
+            className="tab-button"
+            onClick={() => setActiveTab(tab.key)}
+          >
+            {tab.label}
+          </StyledTabButton>
+        ))}
       </div>
 
       <div
+        className="tab-content"
         style={{
           marginTop: '4px',
           padding: '4px',
@@ -32,15 +61,16 @@ export const Tabs = () => {
           boxShadow: '0 0 3px 0 rgba(0, 0, 0, 0.3)',
         }}
       >
-        {tab === 0 && <div>This is First Content</div>}
-        {tab === 1 && <div>This is Second Content</div>}
-        {tab === 2 && <div>This is Third Content</div>}
+        {tabs.find((tab) => tab.key === activeTab)?.content}
       </div>
     </div>
   );
 };
 
-const TabButton = ({ style, ...props }: ButtonHTMLAttributes<HTMLButtonElement>) => {
+const StyledTabButton = ({
+  style,
+  ...props
+}: ButtonHTMLAttributes<HTMLButtonElement>) => {
   return (
     <button
       type="button"
