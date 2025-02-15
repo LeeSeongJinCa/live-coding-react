@@ -6,8 +6,7 @@
  * - 열고 닫을 수 있고 전달된 모든 콘텐츠를 표시할 수 있는 재사용 가능한 모달 컴포넌트를 만듭니다.
  */
 
-import { PropsWithChildren } from 'react';
-
+import { ModalContent } from './ModalContent';
 import { ModalProvider, useModal } from './ModalProvider';
 
 export const ModalExample2 = () => {
@@ -23,51 +22,28 @@ export const Container = () => {
 
   return (
     <button
+      className="open"
       type="button"
       onClick={() => {
-        modal.open(({ id, close }) => (
-          <Content
-            id={id}
+        modal.open(({ close }) => (
+          <ModalContent
             onOpen={() => {
-              modal.open(({ id, close }) => (
-                <Content id={id} onClose={close}>
+              modal.open(({ close }) => (
+                <ModalContent onClose={close}>
                   <h1>Modal 2</h1>
                   <p>This is a modal 2</p>
-                </Content>
+                </ModalContent>
               ));
             }}
             onClose={close}
           >
             <h1>Modal</h1>
             <p>This is a modal</p>
-          </Content>
+          </ModalContent>
         ));
       }}
     >
       Open
     </button>
-  );
-};
-
-const Content = ({
-  children,
-  onOpen,
-  onClose,
-}: PropsWithChildren & { id: string; onOpen?: () => void; onClose?: () => void }) => {
-  return (
-    <div>
-      <div>{children}</div>
-
-      {onClose && (
-        <button type="button" onClick={onClose}>
-          Close
-        </button>
-      )}
-      {onOpen && (
-        <button type="button" onClick={onOpen}>
-          Open
-        </button>
-      )}
-    </div>
   );
 };

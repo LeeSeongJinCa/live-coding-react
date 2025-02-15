@@ -9,6 +9,7 @@
 import { useState } from 'react';
 
 import { Modal } from './Modal';
+import { ModalContent } from './ModalContent';
 
 export const ModalExample = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -16,33 +17,22 @@ export const ModalExample = () => {
 
   return (
     <>
-      <button type="button" onClick={() => setIsOpen(true)}>
+      <button className="open" type="button" onClick={() => setIsOpen(true)}>
         Open
       </button>
 
       <Modal open={isOpen} onClose={() => setIsOpen(false)}>
-        <div>
+        <ModalContent onOpen={() => setIsOpen2(true)} onClose={() => setIsOpen(false)}>
           <h1>Modal</h1>
           <p>This is a modal</p>
-
-          <button type="button" onClick={() => setIsOpen(false)}>
-            Close
-          </button>
-          <button type="button" onClick={() => setIsOpen2(true)}>
-            Open
-          </button>
-        </div>
+        </ModalContent>
       </Modal>
 
       <Modal open={isOpen2} onClose={() => setIsOpen2(false)}>
-        <div>
+        <ModalContent onClose={() => setIsOpen2(false)}>
           <h1>Modal 2</h1>
           <p>This is a modal 2</p>
-
-          <button type="button" onClick={() => setIsOpen2(false)}>
-            Close
-          </button>
-        </div>
+        </ModalContent>
       </Modal>
     </>
   );

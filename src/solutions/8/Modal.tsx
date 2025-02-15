@@ -13,6 +13,7 @@ export const Modal = ({ children, open, onClose }: ModalProps) => {
 
   return createPortal(
     <div
+      className="modal"
       style={{
         position: 'absolute',
         top: 0,
@@ -39,7 +40,7 @@ export const Modal = ({ children, open, onClose }: ModalProps) => {
       />
 
       <div
-        className="modal-content"
+        className="modal-paper"
         style={{
           position: 'absolute',
           top: 0,
@@ -53,7 +54,7 @@ export const Modal = ({ children, open, onClose }: ModalProps) => {
         }}
       >
         <div
-          className="modal-content-inner"
+          className="modal-paper-inner"
           style={{
             minWidth: '240px',
             minHeight: '120px',
