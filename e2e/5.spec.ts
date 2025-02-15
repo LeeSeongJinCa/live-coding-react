@@ -6,9 +6,11 @@ import { IComment } from '../src/types';
 test.describe(
   '사용자가 입력하는 대로 항목 목록을 필터링하는 검색창 컴포넌트를 만듭니다.',
   () => {
-    test('API에서 데이터를 가져와 목록에 표시합니다.', async ({ page }) => {
+    test.beforeEach(async ({ page }) => {
       await page.goto('http://localhost:3000/5');
+    });
 
+    test('API에서 데이터를 가져와 목록에 표시합니다.', async ({ page }) => {
       // API 응답을 대기합니다.
       const responsePromise = await page.waitForResponse(API_ROUTES.comments.GET);
 
@@ -28,8 +30,6 @@ test.describe(
     test('사용자가 존재하는 이름을 입력하면 항목 목록이 해당 이름으로 필터링됩니다.', async ({
       page,
     }) => {
-      await page.goto('http://localhost:3000/5');
-
       // API 응답을 대기합니다.
       const responsePromise = await page.waitForResponse(API_ROUTES.comments.GET);
 
