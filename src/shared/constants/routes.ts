@@ -1,10 +1,10 @@
-import { Counter } from '../solutions/1/1.Create-a-Counter-Component';
-import { ToggleSwitch } from '../solutions/2/2.Implement-a-Toggle-Switch';
-import { TodoList } from '../solutions/3/3.Build-a-To-Do-List';
-import { PostList } from '../solutions/4/4.Fetch-Data-from-an-API';
-import { SearchBar } from '../solutions/5/5.Create-a-Search-Bar';
-import { DropdownMenu } from '../solutions/6/6.Build-a-Dropdown-Menu';
-import { Tabs } from '../solutions/7/7.Implement-a-Tabs-Component';
+import { Counter } from '../../solutions/1/1.Create-a-Counter-Component';
+import { ToggleSwitch } from '../../solutions/2/2.Implement-a-Toggle-Switch';
+import { TodoList } from '../../solutions/3/3.Build-a-To-Do-List';
+import { PostList } from '../../solutions/4/4.Fetch-Data-from-an-API';
+import { SearchBar } from '../../solutions/5/5.Create-a-Search-Bar';
+import { DropdownMenu } from '../../solutions/6/6.Build-a-Dropdown-Menu';
+import { Tabs } from '../../solutions/7/7.Implement-a-Tabs-Component';
 
 export const ROUTES = [
   {

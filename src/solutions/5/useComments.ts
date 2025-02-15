@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { API_ROUTES } from '../../shared/api-routes';
+import { API_ROUTES } from '../../shared/constants/api-routes';
 import { IComment } from '../../types';
 
 export const useComments = () => {

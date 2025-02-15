@@ -1,6 +1,6 @@
 import { delay, http, HttpResponse } from 'msw';
 
-import { API_ROUTES } from '../../shared/api-routes';
+import { API_ROUTES } from '../../shared/constants/api-routes';
 
 export const postHandlers = [
   http.get(API_ROUTES.posts.GET, async () => {

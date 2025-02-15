@@ -8,7 +8,7 @@
 
 import { useEffect, useState } from 'react';
 
-import { API_ROUTES } from '../../shared/api-routes';
+import { API_ROUTES } from '../../shared/constants/api-routes';
 import { IPost } from '../../types';
 
 export const PostList = () => {

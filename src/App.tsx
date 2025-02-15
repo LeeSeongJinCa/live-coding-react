@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router';
 
-import { ROUTES } from './shared/routes';
+import { ROUTES } from './shared/constants/routes';
 
 function App() {
   return (

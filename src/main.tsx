@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router';
 
 import App from './App';
-import { ROUTES } from './shared/routes';
+import { ROUTES } from './shared/constants/routes';
 
 async function enableMocking() {
   if (import.meta.env.VITE_API_MOCK !== 'true') {
