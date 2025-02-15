@@ -1,37 +1,72 @@
-# Vite + React + Typescript + Eslint + Prettier
+# React Coding Test Solutions
 
-A starter for React with Typescript with the fast Vite and all static code testing with Eslint and formatting with Prettier.
+This repository contains solutions to the React coding test questions from the following article:
+[Live Coding React Interview Questions](https://dev.to/allenarduino/live-coding-react-interview-questions-2ndh).
 
-![Vite + React + Typescript + Eslint + Prettier](/resources/screenshot.png)
+Each solution includes:
 
-I found out about Vite and I wanted to have a boilerplate for the technologies that I use. You can find more about these in the following links: [Vite](https://github.com/vitejs/vite), [React](https://reactjs.org/), [Typescript](https://www.typescriptlang.org/), [Eslint](https://eslint.org/), [Prettier](https://prettier.io/).
+- **Problem Statement**: A brief description of the problem.
+- **Implementation**: A React-based solution to the problem.
+- **Testing**: E2E tests to validate the solution.
 
-## Installation
+## Getting Started
 
-Clone the repo and run `yarn install`
+### Prerequisites
 
-or Run command
+To run the solutions and tests locally, ensure you have the following installed:
+
+- Node.js (>= 18.0.0)
+- npm or yarn or pnpm
+- React (>= 18.2.0)
+
+### Installation
+
+Clone this repository and install dependencies:
+
+```sh
+git clone https://github.com/your-username/live-coding-react-practice.git
+cd live-coding-react-practice
+npm install
+```
+
+## Running the Solutions
+
+Each problem is solved within the `src/solutions/` directory. You can run the React app to check the implementations by executing:
+
+```sh
+npm run dev
+```
+
+## Running Tests
+
+E2E tests are written using Playwright. Run the tests with:
+
+```sh
+npm test:e2e
+```
+
+## Project Structure
 
 ```
-npx degit TheSwordBreaker/vite-reactts-eslint-prettier project-name
+live-coding-react-practice/
+│── src/
+│   ├── solutions/     # Solution components
+│   ├── tests/        # E2E tests
+│   ├── mocks/        # API mocks
+│   ├── shared/       # Shared utilities
+│   ├── types/        # TypeScript types
+│   ├── App.tsx       # Main application file
+│   ├── main.tsx      # Entry point
+│── README.md         # Project documentation
+│── package.json      # Dependencies and scripts
+│── vite.config.ts    # Vite configuration
+│── playwright.config.ts # Playwright configuration
 ```
 
-## Start
+## Contribution
 
-After the successfull installation of the packages: `yarn dev`
+Feel free to submit pull requests for improvements, bug fixes, or additional test cases.
 
-## Steps in Vscode
+## License
 
-#### (works with better with this template)
-
-1. Install Eslint and prettier extension for vs code.
-2. Make Sure Both are enabled
-3. Make sure all packages are Installed. (Mostly Eslint and prettier in node_modules)
-4. Enable formatOnSave of vs code
-5. Open a .tsx file and check if the bottom right corners of vs code have Eslint and Prettier with a double tick
-
-![Screenshot (253)_LI](https://user-images.githubusercontent.com/52120562/162486286-7383a737-d555-4f9b-a4dd-c4a81deb7b96.jpg)
-
-If Everything is Good Then It Should Work, but let me new if something else happens
-
-Made with ❤️ by theSwordBreaker(we Destory all types of sword ⚡)
+This project is licensed under the MIT License.
