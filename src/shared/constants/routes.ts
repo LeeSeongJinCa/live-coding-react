@@ -5,6 +5,8 @@ import { PostList } from '../../solutions/4/4.Fetch-Data-from-an-API';
 import { SearchBar } from '../../solutions/5/5.Create-a-Search-Bar';
 import { DropdownMenu } from '../../solutions/6/6.Build-a-Dropdown-Menu';
 import { Tabs } from '../../solutions/7/7.Implement-a-Tabs-Component';
+import { ModalExample } from '../../solutions/8/8.Create-a-Modal-Component';
+import { ModalExample2 } from '../../solutions/8/8.Create-a-Modal-Component-2';
 
 export const ROUTES = [
   {
@@ -41,5 +43,15 @@ export const ROUTES = [
     path: '/7',
     name: '7. Implement a Tabs Component',
     component: Tabs,
+  },
+  {
+    path: '/8',
+    name: '8. Create a Modal Component',
+    component: ModalExample,
+  },
+  {
+    path: '/8-2',
+    name: '8-2. Create a Modal Component 2',
+    component: ModalExample2,
   },
 ];
