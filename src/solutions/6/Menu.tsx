@@ -17,7 +17,8 @@ export const Menu = ({ children, open, anchorEl }: MenuProps) => {
   const anchorRect = anchorEl.getBoundingClientRect();
 
   return (
-    <menu
+    <ul
+      className="menu"
       style={{
         position: 'absolute',
         top: anchorRect.top + anchorRect.height,
@@ -30,6 +31,6 @@ export const Menu = ({ children, open, anchorEl }: MenuProps) => {
       }}
     >
       {children}
-    </menu>
+    </ul>
   );
 };

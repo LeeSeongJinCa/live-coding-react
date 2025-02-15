@@ -3,7 +3,7 @@ import { ToggleSwitch } from '../solutions/2/2.Implement-a-Toggle-Switch';
 import { TodoList } from '../solutions/3/3.Build-a-To-Do-List';
 import { PostList } from '../solutions/4/4.Fetch-Data-from-an-API';
 import { SearchBar } from '../solutions/5/5.Create-a-Search-Bar';
-import { DropdownMenu } from '../solutions/6/5.Create-a-Search-Bar';
+import { DropdownMenu } from '../solutions/6/6.Build-a-Dropdown-Menu';
 
 export const ROUTES = [
   {

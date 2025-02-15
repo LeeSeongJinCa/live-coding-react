@@ -24,13 +24,25 @@ export const DropdownMenu = () => {
         }}
         onClick={toggle}
       >
-        Open
+        {isOpen ? 'Close' : 'Open'}
       </button>
 
       <Menu open={isOpen} anchorEl={anchorRef.current}>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
+        <li className="menu-item">
+          <button type="button" style={{ width: 100 }} onClick={toggle}>
+            1
+          </button>
+        </li>
+        <li>
+          <button type="button" style={{ width: 100 }} onClick={toggle}>
+            2
+          </button>
+        </li>
+        <li>
+          <button type="button" style={{ width: 100 }} onClick={toggle}>
+            3
+          </button>
+        </li>
       </Menu>
     </div>
   );
