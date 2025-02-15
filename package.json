@@ -7,7 +7,7 @@
     "serve": "vite preview",
     "lint:fix": "eslint ./src --ext .jsx,.js,.ts,.tsx --quiet --fix --ignore-path ./.gitignore",
     "lint:format": "prettier  --loglevel warn --write \"./**/*.{js,jsx,ts,tsx,css,md,json}\" ",
-    "lint": "pnpm run lint:format && pnpm run lint:fix ",
+    "lint": "pnpm run lint:format && pnpm run lint:fix",
     "type-check": "tsc",
     "test:ci": "VITE_API_MOCK=true playwright test",
     "test:e2e": "VITE_API_MOCK=true playwright test --ui"
@@ -38,6 +38,5 @@
     "typescript": "^4.5.5",
     "vite": "^2.9.12"
   },
-  "pre-commit": "lint",
   "license": "MIT"
 }
