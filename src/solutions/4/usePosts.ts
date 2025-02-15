@@ -2,21 +2,21 @@ import { useEffect, useState } from 'react';
 
 import { API_ROUTES } from '../../shared/constants/api-routes';
 import { useLoading } from '../../shared/hooks/useLoading';
-import { IComment } from '../../types';
+import { IPost } from '../../types';
 
-export const useComments = () => {
-  const [comments, setComments] = useState<IComment[]>([]);
+export const usePosts = () => {
+  const [posts, setPosts] = useState<IPost[]>([]);
   const { isLoading, startLoading, stopLoading } = useLoading(false);
 
   useEffect(() => {
     startLoading();
-    fetch(API_ROUTES.comments.GET, {
+    fetch(API_ROUTES.posts.GET, {
       method: 'GET',
     })
-      .then<IComment[]>((res) => res.json())
-      .then((comments) => setComments(comments))
+      .then<IPost[]>((res) => res.json())
+      .then((posts) => setPosts(posts))
       .finally(() => stopLoading());
   }, []);
 
-  return [comments, isLoading] as const;
+  return [posts, isLoading] as const;
 };

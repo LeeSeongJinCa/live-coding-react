@@ -8,11 +8,11 @@
 
 import { useRef } from 'react';
 
+import { useToggle } from '../../shared/hooks/useToggle';
 import { Menu } from './Menu';
-import { useToggle } from './useToggle';
 
 export const DropdownMenu = () => {
-  const [isOpen, toggle] = useToggle(false);
+  const { value: isOpen, toggle } = useToggle(false);
   const anchorRef = useRef<HTMLButtonElement | null>(null);
 
   return (

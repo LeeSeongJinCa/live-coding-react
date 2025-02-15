@@ -12,8 +12,8 @@
     "test": "jest",
     "test:w": "jest --watch",
     "coverage": "jest --coverage",
-    "test:ci": "VITE_API_MOCK=true playwright test",
-    "test:e2e": "VITE_API_MOCK=true playwright test --ui"
+    "e2e:ci": "VITE_API_MOCK=true playwright test",
+    "e2e:ui": "VITE_API_MOCK=true playwright test --ui"
   },
   "dependencies": {
     "msw": "^2.7.0",

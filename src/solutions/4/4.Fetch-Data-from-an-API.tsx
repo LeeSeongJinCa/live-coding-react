@@ -6,29 +6,15 @@
  * - API에서 데이터를 가져와 목록에 표시하는 컴포넌트를 만듭니다.
  */
 
-import { useEffect, useState } from 'react';
-
-import { API_ROUTES } from '../../shared/constants/api-routes';
-import { IPost } from '../../types';
+import { usePosts } from './usePosts';
 
 export const PostList = () => {
-  const [posts, setPosts] = useState<IPost[]>([]);
-  const [isLading, setIsLoading] = useState<boolean>(false);
-
-  useEffect(() => {
-    setIsLoading(true);
-    fetch(API_ROUTES.posts.GET, {
-      method: 'GET',
-    })
-      .then<IPost[]>((res) => res.json())
-      .then((posts) => setPosts(posts))
-      .finally(() => setIsLoading(false));
-  }, []);
+  const [posts, isLoading] = usePosts();
 
   return (
     <div>
       <ul>
-        {isLading ? (
+        {isLoading ? (
           <li>Loading...</li>
         ) : (
           posts.map((post) => (

@@ -6,12 +6,10 @@
  * - '켜기'와 '끄기' 상태 사이의 토글 스위치 컴포넌트를 만듭니다.
  */
 
-import { useState } from 'react';
+import { useToggle } from '../../shared/hooks/useToggle';
 
 export const ToggleSwitch = () => {
-  const [isOn, setIsOn] = useState(false);
-
-  const toggle = () => setIsOn((prev) => !prev);
+  const { value: isOn, toggle } = useToggle(false);
 
   return (
     <div>

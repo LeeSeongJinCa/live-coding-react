@@ -8,9 +8,8 @@
 
 import { useState } from 'react';
 
+import { uuid } from '../../shared/utils/uuid';
 import { ITodo } from '../../types';
-
-const uuid = () => crypto.randomUUID();
 
 export const TodoList = () => {
   const [todos, setTodos] = useState<ITodo[]>([
