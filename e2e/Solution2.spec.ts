@@ -1,6 +1,6 @@
 import { expect, Page, test } from '@playwright/test';
 
-test.describe("'켜기'와 '끄기' 상태 사이의 토글 스위치 컴포넌트를 만듭니다.", () => {
+test.describe('Solution 2. Implement a Toggle Switch', () => {
   const OffToOn = async (page: Page) => {
     // Off 상태의 스위치에서
     await expect(page.locator('span[id="status"]')).toHaveText('Off');

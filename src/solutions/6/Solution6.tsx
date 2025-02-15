@@ -11,8 +11,9 @@ import { useRef } from 'react';
 import { useToggle } from '../../shared/hooks/useToggle';
 import { Menu } from './Menu';
 
-export const DropdownMenu = () => {
+export const Solution6 = () => {
   const { value: isOpen, toggle } = useToggle(false);
+
   const anchorRef = useRef<HTMLButtonElement | null>(null);
 
   return (

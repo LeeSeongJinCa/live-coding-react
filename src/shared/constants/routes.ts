@@ -1,57 +1,63 @@
-import { Counter } from '../../solutions/1/1.Create-a-Counter-Component';
-import { ToggleSwitch } from '../../solutions/2/2.Implement-a-Toggle-Switch';
-import { TodoList } from '../../solutions/3/3.Build-a-To-Do-List';
-import { PostList } from '../../solutions/4/4.Fetch-Data-from-an-API';
-import { SearchBar } from '../../solutions/5/5.Create-a-Search-Bar';
-import { DropdownMenu } from '../../solutions/6/6.Build-a-Dropdown-Menu';
-import { Tabs } from '../../solutions/7/7.Implement-a-Tabs-Component';
-import { ModalExample } from '../../solutions/8/8.Create-a-Modal-Component';
-import { ModalExample2 } from '../../solutions/8/8.Create-a-Modal-Component-2';
+import { Solution1 } from '../../solutions/1/Solution1';
+import { Solution2 } from '../../solutions/2/Solution2';
+import { Solution3 } from '../../solutions/3/Solution3';
+import { Solution4 } from '../../solutions/4/Solution4';
+import { Solution5 } from '../../solutions/5/Solution5';
+import { Solution6 } from '../../solutions/6/Solution6';
+import { Solution7 } from '../../solutions/7/Solution7';
+import { Solution8 } from '../../solutions/8/Solution8';
+import { Solution8_2 } from '../../solutions/8/Solution8-2';
+import { Solution9 } from '../../solutions/9/Solution9';
 
 export const ROUTES = [
   {
     path: '/1',
     name: '1. Create a Counter Component',
-    component: Counter,
+    component: Solution1,
   },
   {
     path: '/2',
     name: '2. Implement a Toggle Switch',
-    component: ToggleSwitch,
+    component: Solution2,
   },
   {
     path: '/3',
     name: '3. Build a To-Do List',
-    component: TodoList,
+    component: Solution3,
   },
   {
     path: '/4',
     name: '4. Fetch Data from an API',
-    component: PostList,
+    component: Solution4,
   },
   {
     path: '/5',
     name: '5. Create a Search Bar',
-    component: SearchBar,
+    component: Solution5,
   },
   {
     path: '/6',
     name: '6. Build a Dropdown Menu',
-    component: DropdownMenu,
+    component: Solution6,
   },
   {
     path: '/7',
     name: '7. Implement a Tabs Component',
-    component: Tabs,
+    component: Solution7,
   },
   {
     path: '/8',
     name: '8. Create a Modal Component',
-    component: ModalExample,
+    component: Solution8,
   },
   {
     path: '/8-2',
     name: '8-2. Create a Modal Component 2',
-    component: ModalExample2,
+    component: Solution8_2,
+  },
+  {
+    path: '/9',
+    name: '9. Build a Carousel Component',
+    component: Solution9,
   },
 ];

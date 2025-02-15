@@ -9,7 +9,7 @@
 import { ModalContent } from './ModalContent';
 import { ModalProvider, useModal } from './ModalProvider';
 
-export const ModalExample2 = () => {
+export const Solution8_2 = () => {
   return (
     <ModalProvider>
       <Container />

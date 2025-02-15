@@ -1,6 +1,6 @@
 import test, { expect } from '@playwright/test';
 
-test.describe('클릭 시 항목 목록을 표시하는 드롭다운 메뉴 컴포넌트를 만듭니다.', () => {
+test.describe('Solution 6. Build a Dropdown Menu', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('http://localhost:3000/6');
   });

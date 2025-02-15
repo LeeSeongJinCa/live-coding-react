@@ -1,6 +1,6 @@
 import test, { expect } from '@playwright/test';
 
-test.describe('탭을 선택하면 각 탭에 다른 콘텐츠가 표시되는 탭 컴포넌트를 만듭니다.', () => {
+test.describe('Solution 7. Implement a Tabs Component', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('http://localhost:3000/7');
   });

@@ -10,8 +10,9 @@ import { useState } from 'react';
 
 import { uuid } from '../../shared/utils/uuid';
 import { ITodo } from '../../types';
+import { TodoList } from './TodoList';
 
-export const TodoList = () => {
+export const Solution3 = () => {
   const [todos, setTodos] = useState<ITodo[]>([
     {
       id: uuid(),
@@ -64,31 +65,7 @@ export const TodoList = () => {
         </button>
       </div>
 
-      <ul>
-        {todos.map((todo) => (
-          <li
-            key={todo.id}
-            id={todo.id}
-            className="todo-item"
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              columnGap: 4,
-            }}
-          >
-            <input
-              id="todo-completed"
-              type="checkbox"
-              checked={todo.completed}
-              onChange={(event) => completeTodo(todo.id, event.currentTarget.checked)}
-            />
-            <p id="todo-text">{todo.text}</p>
-            <button id="todo-remove" type="button" onClick={() => removeTodo(todo.id)}>
-              X
-            </button>
-          </li>
-        ))}
-      </ul>
+      <TodoList todos={todos} onComplete={completeTodo} onRemove={removeTodo} />
     </div>
   );
 };

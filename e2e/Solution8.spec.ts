@@ -29,7 +29,7 @@ const runModalTests = () => {
   });
 };
 
-test.describe('열고 닫을 수 있고 전달된 모든 콘텐츠를 표시할 수 있는 재사용 가능한 모달 컴포넌트를 만듭니다.', () => {
+test.describe('Solution 8. Create a Modal Component', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('http://localhost:3000/8');
   });
@@ -37,7 +37,7 @@ test.describe('열고 닫을 수 있고 전달된 모든 콘텐츠를 표시할 
   runModalTests();
 });
 
-test.describe('열고 닫을 수 있고 전달된 모든 콘텐츠를 표시할 수 있는 재사용 가능한 모달 컴포넌트를 만듭니다. (2)', () => {
+test.describe('Solution 8-2. Create a Modal Component (2)', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('http://localhost:3000/8-2');
   });

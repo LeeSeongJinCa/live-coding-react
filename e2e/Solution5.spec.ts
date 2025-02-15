@@ -3,7 +3,7 @@ import { expect, test } from '@playwright/test';
 import { API_ROUTES } from '../src/shared/constants/api-routes';
 import { IComment } from '../src/types';
 
-test.describe('사용자가 입력하는 대로 항목 목록을 필터링하는 검색창 컴포넌트를 만듭니다.', () => {
+test.describe('Solution 5. Create a Search Bar', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('http://localhost:3000/5');
   });

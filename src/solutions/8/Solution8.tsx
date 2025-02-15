@@ -11,7 +11,7 @@ import { useState } from 'react';
 import { Modal } from './Modal';
 import { ModalContent } from './ModalContent';
 
-export const ModalExample = () => {
+export const Solution8 = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isOpen2, setIsOpen2] = useState<boolean>(false);
 

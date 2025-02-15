@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 
-test.describe('버튼을 클릭할 때 카운트를 늘리거나 줄이는 간단한 카운터 컴포넌트를 만듭니다.', () => {
+test.describe('Solution 1. Create a Counter Component', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('http://localhost:3000/1');
   });

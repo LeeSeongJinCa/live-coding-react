@@ -3,7 +3,7 @@ import { expect, test } from '@playwright/test';
 import { API_ROUTES } from '../src/shared/constants/api-routes';
 import { IPost } from '../src/types';
 
-test.describe('API에서 데이터를 가져와 목록에 표시하는 컴포넌트를 만듭니다.', () => {
+test.describe('Solution 4. Fetch Data from an API', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('http://localhost:3000/4');
   });

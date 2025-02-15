@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 
-test.describe('사용자가 항목을 추가, 제거, 완료로 표시할 수 있는 할 일 목록 구성 요소를 만듭니다.', () => {
+test.describe('Solution 3. Build a To-Do List', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('http://localhost:3000/3');
   });
