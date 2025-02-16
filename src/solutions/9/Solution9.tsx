@@ -15,5 +15,5 @@ const images: CarouselImage[] = [
 ];
 
 export const Solution9 = () => {
-  return <Carousel images={images} interval={2000} pagination />;
+  return <Carousel images={images} interval={1000} pagination />;
 };

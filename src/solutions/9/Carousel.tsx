@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { useCallback, useEffect, useState } from 'react';
 
 export type CarouselImage = {
@@ -13,7 +14,7 @@ interface CarouselProps {
 
 export const Carousel = ({
   images,
-  interval = 3000,
+  interval = 1000,
   pagination = false,
 }: CarouselProps) => {
   const [key, setKey] = useState(0);
@@ -58,6 +59,11 @@ export const Carousel = ({
         {images.map((image, index) => (
           <div
             key={index}
+            className={clsx({
+              image: true,
+              [`index-${index}`]: true,
+              active: currentIndex === index,
+            })}
             style={{
               position: 'relative',
               flex: '0',
@@ -100,13 +106,21 @@ export const Carousel = ({
             <button
               key={index}
               type="button"
+              className={clsx({
+                pagination: true,
+                [`index-${index}`]: true,
+                active: currentIndex === index,
+              })}
               style={{
                 width: 10,
                 height: 10,
                 border: 0,
                 borderRadius: '50%',
-                background: '#616161',
+                background: '#c5c5c5',
                 cursor: 'pointer',
+                ...(currentIndex === index && {
+                  background: '#1c1c1c',
+                }),
               }}
               onClick={() => handlePaginationClick(index)}
             />
