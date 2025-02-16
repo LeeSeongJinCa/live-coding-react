@@ -6,16 +6,14 @@
  * - 이미지 세트를 순환하는 캐러셀 컴포넌트를 만듭니다.
  */
 
-export const Solution9 = () => {
-  return <Carousel />;
-};
+import { Carousel, CarouselImage } from './Carousel';
 
-const Carousel = () => {
-  return (
-    <div>
-      <div style={{ width: 600, height: 400 }}>
-        <img src="https://placehold.co/600x400" alt="carousel" width={600} height={400} />
-      </div>
-    </div>
-  );
+const images: CarouselImage[] = [
+  { src: 'https://placehold.co/600x400', alt: 'carousel 1' },
+  { src: 'https://placehold.co/600x400', alt: 'carousel 2' },
+  { src: 'https://placehold.co/600x400', alt: 'carousel 3' },
+];
+
+export const Solution9 = () => {
+  return <Carousel images={images} interval={2000} pagination />;
 };
