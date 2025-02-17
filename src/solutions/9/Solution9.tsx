@@ -15,5 +15,19 @@ const images: CarouselImage[] = [
 ];
 
 export const Solution9 = () => {
-  return <Carousel images={images} interval={1000} pagination />;
+  const interval = 3000;
+
+  return (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        rowGap: '24px',
+        padding: '24px 0',
+      }}
+    >
+      <h2>Carousel with Pagination and Navigation</h2>
+      <Carousel images={images} interval={interval} pagination navigation />
+    </div>
+  );
 };
