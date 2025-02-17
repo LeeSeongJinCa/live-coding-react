@@ -1,4 +1,6 @@
+// eslint-disable-next-line simple-import-sort/imports
 import { Solution1 } from '../../solutions/1/Solution1';
+import { Solution10 } from '../../solutions/10/Solution10';
 import { Solution2 } from '../../solutions/2/Solution2';
 import { Solution3 } from '../../solutions/3/Solution3';
 import { Solution4 } from '../../solutions/4/Solution4';
@@ -59,5 +61,10 @@ export const ROUTES = [
     path: '/9',
     name: '9. Build a Carousel Component',
     component: Solution9,
+  },
+  {
+    path: '/10',
+    name: '10. Implement a Star Rating Component',
+    component: Solution10,
   },
 ];
