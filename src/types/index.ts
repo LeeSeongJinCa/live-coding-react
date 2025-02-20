@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export interface ITodo {
   id: string;
   text: string;
@@ -17,4 +19,10 @@ export interface IComment {
   name: string;
   email: string;
   body: string;
+}
+
+export interface IStep {
+  id: string;
+  label: string;
+  component: ReactNode;
 }

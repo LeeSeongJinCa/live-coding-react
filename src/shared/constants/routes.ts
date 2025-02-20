@@ -2,6 +2,7 @@
 import { Solution1 } from '../../solutions/1/Solution1';
 import { Solution10 } from '../../solutions/10/Solution10';
 import { Solution11 } from '../../solutions/11/Solution11';
+import { Solution12 } from '../../solutions/12/Solution12';
 import { Solution2 } from '../../solutions/2/Solution2';
 import { Solution3 } from '../../solutions/3/Solution3';
 import { Solution4 } from '../../solutions/4/Solution4';
@@ -72,5 +73,10 @@ export const ROUTES = [
     path: '/11',
     name: '11. Create a Real-Time Search Filter',
     component: Solution11,
+  },
+  {
+    path: '/12',
+    name: '12. Build a Multi-Step Form',
+    component: Solution12,
   },
 ];
