@@ -49,9 +49,9 @@ npm test:e2e
 
 ```
 live-coding-react-practice/
+├── e2e/            # E2E tests
 │── src/
-│   ├── solutions/     # Solution components
-│   ├── tests/        # E2E tests
+│   ├── solutions/    # Solution components
 │   ├── mocks/        # API mocks
 │   ├── shared/       # Shared utilities
 │   ├── types/        # TypeScript types
