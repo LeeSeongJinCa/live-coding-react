@@ -4,6 +4,7 @@ import { Solution10 } from '../../solutions/10/Solution10';
 import { Solution11 } from '../../solutions/11/Solution11';
 import { Solution12 } from '../../solutions/12/Solution12';
 import { Solution13 } from '../../solutions/13/Solution13';
+import { Solution14 } from '../../solutions/14/Solution14';
 import { Solution2 } from '../../solutions/2/Solution2';
 import { Solution3 } from '../../solutions/3/Solution3';
 import { Solution4 } from '../../solutions/4/Solution4';
@@ -84,5 +85,10 @@ export const ROUTES = [
     path: '/13',
     name: '13. Implement a Virtualized List',
     component: Solution13,
+  },
+  {
+    path: '/14',
+    name: '14. Create a Reusable Form Component with Validation',
+    component: Solution14,
   },
 ];
