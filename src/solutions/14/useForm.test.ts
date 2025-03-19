@@ -7,25 +7,31 @@ describe('useForm', () => {
   const defaultValues = {
     name: '',
     email: '',
-  };
+  } as const;
 
   // 유효성 검사 함수
   const validators = {
     name: (value: string) => value.length >= 3,
     email: (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value),
-  };
+  } as const;
 
-  it('초기 상태가 defaultValues로 설정되어야 함', () => {
+  it('초기 상태가 defaultValues로 설정되어야 한다.', () => {
     const { result } = renderHook(() => useForm({ defaultValues, validators }));
 
-    // register 메서드를 통해 각 필드의 초기값 확인
-    expect(result.current.register('name').value).toBe('');
-    expect(result.current.register('email').value).toBe('');
-    expect(result.current.register('name').error).toBeUndefined();
-    expect(result.current.register('email').error).toBeUndefined();
+    // values 초기값 확인
+    expect(result.current.values.name).toBe('');
+    expect(result.current.values.email).toBe('');
   });
 
-  it('입력값 변경 시 상태가 올바르게 업데이트되어야 함', () => {
+  it('초기 유효성 검사 결과가 올바르게 설정되어야 한다.', () => {
+    const { result } = renderHook(() => useForm({ defaultValues, validators }));
+
+    // 유효성 검사 확인
+    expect(result.current.errors.name).toBe('Invalid value for name');
+    expect(result.current.errors.email).toBe('Invalid value for email');
+  });
+
+  it('입력값 변경 시 상태가 올바르게 업데이트되어야 한다.', () => {
     const { result } = renderHook(() => useForm({ defaultValues, validators }));
 
     // name 필드 변경
@@ -55,7 +61,7 @@ describe('useForm', () => {
     expect(result.current.register('email').error).toBe(`Invalid value for ${'email'}`);
   });
 
-  it('유효하지 않은 폼 제출 시 예외가 발생해야 함', () => {
+  it('유효하지 않은 폼 제출 시 콜백함수가 실행되지 않아야 한다.', () => {
     const { result } = renderHook(() => useForm({ defaultValues, validators }));
     const mockSubmitCallback = jest.fn();
     const mockPreventDefault = jest.fn();
@@ -66,13 +72,13 @@ describe('useForm', () => {
       handleSubmit({
         preventDefault: mockPreventDefault,
       } as unknown as React.FormEvent<HTMLFormElement>);
-    }).toThrow('Invalid value for name');
+    });
 
     // 콜백이 호출되지 않아야 함
     expect(mockSubmitCallback).not.toHaveBeenCalled();
   });
 
-  it('유효한 폼 제출 시 콜백이 호출되어야 함', () => {
+  it('유효한 폼 제출 시 콜백이 호출되어야 한다.', () => {
     const { result } = renderHook(() => useForm({ defaultValues, validators }));
     const mockSubmitCallback = jest.fn();
     const mockPreventDefault = jest.fn();

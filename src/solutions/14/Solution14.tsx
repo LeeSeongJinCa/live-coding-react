@@ -9,31 +9,55 @@
 import { Form } from './Form';
 import { useForm } from './useForm';
 
-const defaultValues = {
+type FormData = {
+  name: string;
+  email: string;
+};
+
+const defaultValues: FormData = {
   name: '',
   email: '',
-} as const;
+};
 
 export const Solution14 = () => {
-  const form = useForm({
+  const form = useForm<FormData>({
     defaultValues,
     validators: {
-      name: (value: string) => value.length >= 3,
-      email: (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value),
+      name: (value) => value.length >= 3,
+      email: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value),
     },
   });
 
-  const handleSubmit = form.handleSubmit(() => {
-    console.log('submit');
+  const handleSubmit = form.handleSubmit((payload) => {
+    console.log('submit:', payload);
   });
 
   return (
     <Form onSubmit={handleSubmit}>
-      <input aria-label="name" {...form.register('name')} />
-      <input aria-label="email" {...form.register('email')} />
-      <button type="submit" aria-label="submit">
-        Submit
-      </button>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'flex-start',
+          rowGap: 12,
+        }}
+      >
+        <label>
+          <p>Name</p>
+          <input aria-label="name" {...form.register('name')} />
+          {form.errors.name && <p>{form.errors.name}</p>}
+        </label>
+
+        <label>
+          <p>Email</p>
+          <input aria-label="email" {...form.register('email')} />
+          {form.errors.email && <p>{form.errors.email}</p>}
+        </label>
+
+        <button type="submit" aria-label="submit" disabled={!form.isValid}>
+          Submit
+        </button>
+      </div>
     </Form>
   );
 };
