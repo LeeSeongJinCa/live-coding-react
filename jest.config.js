@@ -9,6 +9,6 @@ module.exports = {
   testMatch: ['**/*.test.ts(x)'],
   testPathIgnorePatterns: ['<rootDir>/node_modules/'],
   transform: {
-    '^.+.tsx?$': ['ts-jest', {}],
+    '^.+.ts(x)?$': ['ts-jest', {}],
   },
 };
